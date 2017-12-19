@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +43,7 @@ public class DeviceAccessController {
     @SuppressWarnings("unchecked")
 	@RequestMapping(value = "/noauth/allDevices" )
     public List<DeviceDto> getAllDevices(){
-    	String token = (String)request.;
+    	String token = (String)request.getSession().getAttribute("token");
     	StringBuffer param = new StringBuffer();
     	param.append("limit").append("=").append("100");
         String responseContent = HttpClientUtil.getInstance()
