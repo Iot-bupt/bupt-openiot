@@ -1,0 +1,35 @@
+# 刚开始不能读取，后将文件名改为application.yml之后可以读取
+# JWT Token parameters
+security.jwt:
+  tokenExpirationTime: "${JWT_TOKEN_EXPIRATION_TIME:900}" # 单位是秒 15分钟
+  refreshTokenExpTime: "${JWT_REFRESH_TOKEN_EXPIRATION_TIME:3600}" # Seconds (1 hour)
+  tokenIssuer: "${JWT_TOKEN_ISSUER:openiot.bupt.com}"
+  tokenSigningKey: "${JWT_TOKEN_SIGNING_KEY:openiotDefaultSigningKey}"
+
+mqtt:
+#mqtt服务器端口
+  port: 8088
+#socket发送缓存大小
+  sockectSendBufferSize: 64
+#socket接收缓存大小
+  sockectReceiveBufferSize: 5
+#缓冲区尺寸
+  minBufferPoolSize: 2000
+  maxBufferPoolSize: 2000
+#写缓冲区大小（Kb）
+  writeBuffer: 64
+#mqtt临时信息缓存文件
+  path: "moquette_store.mapdb"
+
+# Zookeeper 配置
+zookeeper.registry:
+  servers: 127.0.0.1:2181
+
+# OpenIoT 配置
+bupt.openiot:
+  server: localhost:8080
+  
+spring.thymeleaf.prefix: classpath:/static/
+
+spring.thymeleaf.mode: HTML5
+spring.thymeleaf.cache: false

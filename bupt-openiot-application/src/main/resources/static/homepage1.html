@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>物管理</title>
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3"></meta>
+	<meta http-equiv="description" content="this is my page"></meta>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap-theme.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../static/css/login.css"></link>
+	<link rel="stylesheet" type="text/css" href="../../static/css/headName.css"></link>
+	<link rel="stylesheet" type="text/css" href="./../css/column.css"></link>
+</head>
+<body>
+	<nav class="navbar navbar-inverse bar" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse">
+				<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="${request.contextPath}/api/noauth/homepage"><span id="headName">物管理平台</span></a>
+		</div>
+		<div class="collapse navbar-collapse " id="example-navbar-collapse" >
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						ThingsManagement <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="${request.contextPath}/api/noauth/user/personui">个人中心</a></li>
+						<li><a href="${request.contextPath}/api/noauth/homepage">物管理</a></li>
+						<li><a href="${request.contextPath}/api/noauth/deviceaccess">物接入</a></li>
+						<li><a href="${request.contextPath}/">退出登录</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container container_body" style='margin-top: -19px;width:100%;min-height: 800px;'>
+	<div class="row">
+		<div class="col-md-2 nav_left">
+			<ul class="nav nav-stacked nav-pills">
+				<li style='font-size: 18px;
+				margin-left: -5px;'><a href="${request.contextPath}/api/noauth/homepage"><span class="glyphicon glyphicon-home"></span> <span> 物管理</span></a></li>
+				<hr style='margin-top: 0px; border-top: 1px solid black;'></hr>
+				<li class="active"><a href="${request.contextPath}/api/noauth/homepage"><span class="glyphicon glyphicon-th-list"></span> <span> 设备列表</span></a></li>
+				<li><a href="${request.contextPath}/api/noauth/devicegroup"><span class="glyphicon glyphicon-inbox"></span> 设备组</a></li>
+				<li><a href="${request.contextPath}/api/noauth/capability/evaluate"><span class="glyphicon glyphicon-inbox"></span> 能力评估</a></li>
+			</ul>
+		</div>
+		<div class="col-md-10 col-md-offset-2 nav_right">
+			<div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">设备列表</h3>
+					</div>
+					<div class="panel-body">	
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">+ 创建设备</button>
+						<button class="btn btn-primary"  id="device_search" style="float: right;" data-toggle="modal" data-target="#myModal1" onclick="search()">搜索设备</button>
+						<input type="text" class="deviceID" id="device_input" name="deviceSearch" placeholder="请输入设备名称" style="margin-left: 630px; margin-top: 4px;" />
+
+					</div>
+					<table class="table">
+						<th style="width: 16%;text-align: center;" >设备名称</th>
+						<th style="width: 16%;text-align: center;">类型 </th>
+						<th style="width: 16%;text-align: center;">描述 </th>
+						<th style="width: 20%;text-align: center;">创建时间 </th>
+						<th style="width: 16%;text-align: center;">设备影子 </th>
+						<th style="width: 16%;text-align: center;">操作 </th>
+					</table>
+					<hr style="margin-top: 2px;"></hr>
+					<table id="device_table" class="table">
+						<tbody >
+						</tbody>
+					</table>
+							<ul class="pager">
+								<li><a href="#">上一页</a></li>
+								<li><a href="#">下一页</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">创建设备</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form" action="#" >
+
+							<div class="form-group">
+								<label  class="col-sm-3 control-label" style='text-align: left;'>设备名称</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="name" placeholder="请输入名称"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label  class="col-sm-3 control-label control-label1" style='text-align: left;'>设备描述</label>
+								<div class="col-sm-9">
+									<textarea class="form-control" rows="3" placeholder="长度n个字符" id="description"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label  class="col-sm-3 control-label" style='text-align: left;'>通信协议</label>
+								<div class="col-sm-9">
+									MQTT
+								</div>
+							</div>
+							<div class="form-group">
+								<label  class="col-sm-3 control-label" style='text-align: left;'>选择设备组</label>
+								<div class="col-sm-9" >
+									<input type="text" class='add' placeholder="请输入名称" id="devicegroup"/>
+									<input type="button" id="add" class= 'btn btn-primary pull-right' value="添加" />
+								</div>
+								<div class="col-sm-9 col-sm-offset-3" id='content'>
+								</div>
+
+							</div>
+						</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="create">创建</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<div class='container'>
+					<div class='row'>
+						<div class= 'col-md-3'>联系我们</div>
+						<div class= 'col-md-3'>教程指导</div>
+						<div class= 'col-md-3'>Powered by CHENSI</div>
+					</div>
+				</div>
+			</footer>
+			<script src="../../static/js/jquery.min.js"></script>
+			<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../static/js/homepage.js"></script>
+		</body>
+		</html>

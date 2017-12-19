@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bupt.openiot.dao.mapper.CapabilityMapper" >
+  <resultMap id="BaseResultMap" type="com.bupt.openiot.dao.model.Capability" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="capabilityId" property="capabilityid" jdbcType="VARCHAR" />
+    <result column="deviceId" property="deviceid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="cost" property="cost" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="BIGINT" />
+  </resultMap>
+</mapper>

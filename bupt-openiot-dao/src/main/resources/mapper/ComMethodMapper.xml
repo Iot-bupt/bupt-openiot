@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bupt.openiot.dao.mapper.ComMethodMapper" >
+  <resultMap id="BaseResultMap" type="com.bupt.openiot.dao.model.ComMethod" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="com_method_id" property="comMethodId" jdbcType="VARCHAR" />
+    <result column="com_method" property="comMethod" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>
