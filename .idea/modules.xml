@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bupt-openiot.iml" filepath="$PROJECT_DIR$/.idea/bupt-openiot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-application/bupt-openiot-application.iml" filepath="$PROJECT_DIR$/bupt-openiot-application/bupt-openiot-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common.iml" filepath="$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-data/bupt-openiot-common-data.iml" filepath="$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-data/bupt-openiot-common-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-registry/bupt-openiot-common-registry.iml" filepath="$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-registry/bupt-openiot-common-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-dao/bupt-openiot-dao.iml" filepath="$PROJECT_DIR$/bupt-openiot-dao/bupt-openiot-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bupt-openiot-internalsdk/bupt-openiot-internalsdk.iml" filepath="$PROJECT_DIR$/bupt-openiot-internalsdk/bupt-openiot-internalsdk.iml" />
+    </modules>
+  </component>
+</project>

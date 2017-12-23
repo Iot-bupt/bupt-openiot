@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-application" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-data" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-common/bupt-openiot-common-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bupt-openiot-internalsdk" charset="UTF-8" />
+  </component>
+</project>

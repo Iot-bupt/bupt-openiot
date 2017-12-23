@@ -69,6 +69,7 @@ public class DeviceAccessController {
         	}else{
         		device.setAdditionalInfo((String) ((Map<String, Object>)map.get("additionalInfo")).get("description"));
         	}
+			device.setStatus(map.get("status")==null?"":(String)map.get("status"));
         	deviceList.add(device);
         }
     	return deviceList;

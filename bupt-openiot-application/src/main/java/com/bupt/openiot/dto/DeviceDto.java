@@ -6,6 +6,9 @@ public class DeviceDto {
 	private String name;
 	private String type;
 	private String additionalInfo;
+	private String status;
+	public String getStatus(){return status;}
+	public void setStatus(String status){this.status = status;}
 	public String getId() {
 		return id;
 	}
